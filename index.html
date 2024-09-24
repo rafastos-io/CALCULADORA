@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Comandas iOS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ios-dashboard">
+        <header class="ios-header">
+            <h1>Dashboard de Comandas</h1>
+        </header>
+        <main class="ios-content">
+            <div class="ios-column">
+                <section class="ios-card">
+                    <h2>Adicionar Pessoa</h2>
+                    <div class="ios-input-group">
+                        <input type="text" id="nomePessoa" placeholder="Nome da pessoa" class="ios-input">
+                        <button onclick="adicionarPessoa()" class="ios-button">Adicionar</button>
+                    </div>
+                </section>
+                <section class="ios-card">
+                    <h2>Adicionar Item</h2>
+                    <div class="ios-input-group">
+                        <input type="text" id="nomeItem" placeholder="Nome do item" class="ios-input">
+                        <div class="ios-input-wrapper">
+                            <span class="ios-currency">R$</span>
+                            <input type="number" id="valorItem" step="0.01" min="0" placeholder="0,00" class="ios-input">
+                        </div>
+                    </div>
+                    <div class="ios-input-group">
+                        <h3>Pessoas envolvidas:</h3>
+                        <div id="pessoasEnvolvidas" class="ios-checkbox-group">
+                            <!-- Checkboxes serão preenchidos dinamicamente -->
+                        </div>
+                    </div>
+                    <button onclick="adicionarItem()" class="ios-button">Adicionar</button>
+                </section>
+                <section class="ios-card">
+                    <h2>Porcentagem de Gorjeta</h2>
+                    <div class="ios-input-group">
+                        <div class="ios-slider-wrapper">
+                            <input type="range" id="porcentagemGorjeta" min="0" max="30" value="10" class="ios-slider">
+                            <span id="gorjetaValor" class="ios-slider-value">10%</span>
+                        </div>
+                    </div>
+                    <button onclick="calcularDivisao()" class="ios-button ios-button-primary">Calcular divisão</button>
+                </section>
+            </div>
+            <div class="ios-column">
+                <section class="ios-card">
+                    <h2>Pessoas na Mesa</h2>
+                    <div id="listaPessoas" class="ios-list">
+                        <!-- As pessoas adicionadas serão exibidas aqui -->
+                    </div>
+                </section>
+                <section class="ios-card">
+                    <h2>Itens da Conta</h2>
+                    <div id="listaItens" class="ios-list">
+                        <!-- Os itens adicionados serão exibidos aqui -->
+                    </div>
+                </section>
+                <section id="resultado" class="ios-card resultado-hidden">
+                    <h2>Resultado</h2>
+                    <div class="ios-result-item">
+                        <span>Total com gorjeta</span>
+                        <span id="totalComGorjeta">R$ 0,00</span>
+                    </div>
+                    <div class="ios-result-item">
+                        <span>Gorjeta</span>
+                        <span id="gorjetaTotal">R$ 0,00</span>
+                    </div>
+                    <div class="ios-result-item">
+                        <span>Valor por pessoa</span>
+                        <span id="valorPorPessoa">R$ 0,00</span>
+                    </div>
+                    <div id="resultadoIndividual" class="ios-result-individual">
+                        <!-- Divisão individual será exibida aqui -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

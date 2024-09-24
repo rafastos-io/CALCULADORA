@@ -1,0 +1,345 @@
+body {
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif; /* Alterado para Ubuntu */
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f7;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ios-dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ios-header {
+    background-color: #ff9500; /* Alterado para laranja */
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #cc7a00; /* Alterado para laranja */
+}
+
+.ios-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.ios-content {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+    overflow-y: auto;
+}
+
+.ios-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ios-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ios-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #ff9500; /* Alterado para laranja */
+}
+
+.ios-input-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ios-label {
+    display: block;
+    font-size: 15px;
+    color: #3c3c43;
+    margin-bottom: 8px;
+}
+
+.ios-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c6c6c8;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.ios-input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+.ios-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.ios-currency {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3c3c43;
+    margin-right: 5px; /* Adiciona espaçamento entre o símbolo e o valor */
+}
+
+.ios-input[type="number"] {
+    padding-left: 30px;
+}
+
+.ios-slider-wrapper {
+    position: relative;
+    padding-top: 24px;
+    width: 100%;
+}
+
+.ios-slider {
+    width: 100%;
+    height: 4px;
+    background: #c6c6c8;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border-radius: 2px;
+}
+
+.ios-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ff9500; /* Alterado para laranja */
+    cursor: pointer;
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.ios-slider::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 8px rgba(0, 122, 255, 0.2);
+}
+
+.ios-slider-value {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 15px;
+    color: #ff9500; /* Alterado para laranja */
+    font-weight: 500;
+}
+
+.ios-button {
+    background-color: #ff9500; /* Alterado para laranja */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.ios-button:hover {
+    background-color: #cc7a00; /* Alterado para laranja */
+    transform: translateY(-1px);
+}
+
+.ios-button-small {
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.ios-list {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.ios-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s;
+}
+
+.ios-list-item:last-child {
+    border-bottom: none;
+}
+
+.ios-list-item:hover {
+    background-color: #f8f8f8;
+}
+
+.ios-result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.ios-result-individual {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.ios-result-individual h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #007aff;
+}
+
+.resultado-hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .ios-content {
+        flex-direction: column;
+    }
+
+    .ios-column {
+        min-width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .ios-column {
+        min-width: calc(50% - 16px);
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .ios-dashboard {
+        height: auto;
+    }
+}
+
+@keyframes destaque {
+    0% { background-color: #e6f3ff; }
+    100% { background-color: transparent; }
+}
+
+.ios-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.ios-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.ios-checkbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.ios-checkbox label {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilos para o modo noturno */
+body.dark-mode {
+    background-color: #1c1c1e;
+    color: #fff;
+}
+
+.dark-mode .ios-dashboard {
+    background-color: #1c1c1e;
+}
+
+.dark-mode .ios-header {
+    background-color: #000;
+    border-bottom-color: #38383a;
+}
+
+.dark-mode .ios-card {
+    background-color: #2c2c2e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .ios-card h2 {
+    color: #ff9500; /* Alterado para laranja */
+}
+
+.dark-mode .ios-input,
+.dark-mode .ios-select {
+    background-color: #1c1c1e;
+    border-color: #38383a;
+    color: #fff;
+}
+
+.dark-mode .ios-input:focus,
+.dark-mode .ios-select:focus {
+    border-color: #0a84ff;
+}
+
+.dark-mode .ios-currency {
+    color: #8e8e93;
+}
+
+.dark-mode .ios-slider {
+    background: #38383a;
+}
+
+.dark-mode .ios-slider::-webkit-slider-thumb {
+    background: #0a84ff;
+}
+
+.dark-mode .ios-button {
+    background-color: #ff9500; /* Alterado para laranja */
+}
+
+.dark-mode .ios-button:hover {
+    background-color: #cc7a00; /* Alterado para laranja */
+}
+
+.dark-mode .ios-list {
+    border-color: #38383a;
+}
+
+.dark-mode .ios-list-item {
+    border-bottom-color: #38383a;
+}
+
+.dark-mode .ios-list-item:hover {
+    background-color: #2c2c2e;
+}
+
+.dark-mode .ios-result-individual {
+    border-top-color: #38383a;
+}
