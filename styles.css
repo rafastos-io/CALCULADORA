@@ -1,42 +1,36 @@
 body {
-    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif; /* Alterado para Ubuntu */
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f2f2f7;
     color: #000;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .ios-dashboard {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
+/* Remova o estilo do cabeçalho */
 .ios-header {
-    background-color: #ff9500; /* Alterado para laranja */
-    padding: 16px;
-    text-align: center;
-    border-bottom: 1px solid #cc7a00; /* Alterado para laranja */
-}
-
-.ios-header h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
+    display: none;
 }
 
 .ios-content {
-    flex: 1;
     display: flex;
     flex-wrap: wrap;
-    padding: 16px;
-    gap: 16px;
-    overflow-y: auto;
+    padding: 24px;
+    gap: 24px;
 }
 
 .ios-column {
@@ -48,7 +42,7 @@ body {
 }
 
 .ios-card {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -59,7 +53,7 @@ body {
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 16px;
-    color: #ff9500; /* Alterado para laranja */
+    color: #000;
 }
 
 .ios-input-group {
@@ -80,7 +74,7 @@ body {
     width: 100%;
     padding: 12px;
     border: 1px solid #c6c6c8;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 16px;
     background-color: #fff;
     box-sizing: border-box;
@@ -89,8 +83,8 @@ body {
 
 .ios-input:focus {
     outline: none;
-    border-color: #007aff;
-    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.2);
 }
 
 .ios-input-wrapper {
@@ -104,7 +98,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: #3c3c43;
-    margin-right: 5px; /* Adiciona espaçamento entre o símbolo e o valor */
+    margin-right: 5px;
 }
 
 .ios-input[type="number"] {
@@ -118,29 +112,29 @@ body {
 }
 
 .ios-slider {
+    -webkit-appearance: none;
     width: 100%;
-    height: 4px;
-    background: #c6c6c8;
+    height: 2px;
+    background: #e0e0e0;
     outline: none;
-    opacity: 0.7;
+    opacity: 1;
     transition: opacity 0.2s;
-    border-radius: 2px;
 }
 
 .ios-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: #ff9500; /* Alterado para laranja */
+    background: #ffcc00;
     cursor: pointer;
-    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.2);
     transition: box-shadow 0.3s ease;
 }
 
 .ios-slider::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 0 8px rgba(0, 122, 255, 0.2);
+    box-shadow: 0 0 0 8px rgba(255, 204, 0, 0.2);
 }
 
 .ios-slider-value {
@@ -148,25 +142,26 @@ body {
     right: 0;
     top: 0;
     font-size: 15px;
-    color: #ff9500; /* Alterado para laranja */
+    color: #000;
     font-weight: 500;
 }
 
 .ios-button {
-    background-color: #ff9500; /* Alterado para laranja */
-    color: #fff;
+    background-color: #ffcc00;
+    color: #000;
     border: none;
     padding: 12px 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Adicionada transição para box-shadow */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .ios-button:hover {
-    background-color: #cc7a00; /* Alterado para laranja */
+    background-color: #ffd633;
     transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .ios-button-small {
@@ -178,7 +173,7 @@ body {
     max-height: 250px;
     overflow-y: auto;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 8px;
 }
 
@@ -216,16 +211,67 @@ body {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 12px;
-    color: #007aff;
+    color: #000;
 }
 
 .resultado-hidden {
     display: none;
 }
 
+.ios-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.ios-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.ios-checkbox input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #c6c6c8;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.ios-checkbox input[type="checkbox"]:checked {
+    border-color: #ffcc00;
+    background-color: #ffcc00;
+}
+
+.ios-checkbox input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+}
+
+.ios-checkbox label {
+    font-size: 16px;
+    color: #000;
+}
+
 @media (max-width: 768px) {
+    .ios-dashboard {
+        margin: 10px;
+        border-radius: 10px;
+    }
+
     .ios-content {
-        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
     }
 
     .ios-column {
@@ -243,104 +289,4 @@ body {
     .ios-dashboard {
         height: auto;
     }
-}
-
-/* Removendo estilos para o modo noturno */
-body.dark-mode {
-    background-color: #1c1c1e;
-    color: #fff;
-}
-
-.dark-mode .ios-dashboard {
-    background-color: #1c1c1e;
-}
-
-.dark-mode .ios-header {
-    background-color: #000;
-    border-bottom-color: #38383a;
-}
-
-.dark-mode .ios-card {
-    background-color: #2c2c2e;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .ios-card h2 {
-    color: #ff9500; /* Alterado para laranja */
-}
-
-.dark-mode .ios-input,
-.dark-mode .ios-select {
-    background-color: #1c1c1e;
-    border-color: #38383a;
-    color: #fff;
-}
-
-.dark-mode .ios-input:focus,
-.dark-mode .ios-select:focus {
-    border-color: #0a84ff;
-}
-
-.dark-mode .ios-currency {
-    color: #8e8e93;
-}
-
-.dark-mode .ios-slider {
-    background: #38383a;
-}
-
-.dark-mode .ios-slider::-webkit-slider-thumb {
-    background: #0a84ff;
-}
-
-.dark-mode .ios-button {
-    background-color: #ff9500; /* Alterado para laranja */
-}
-
-.dark-mode .ios-button:hover {
-    background-color: #cc7a00; /* Alterado para laranja */
-}
-
-.dark-mode .ios-list {
-    border-color: #38383a;
-}
-
-.dark-mode .ios-list-item {
-    border-bottom-color: #38383a;
-}
-
-.dark-mode .ios-list-item:hover {
-    background-color: #2c2c2e;
-}
-
-.dark-mode .ios-result-individual {
-    border-top-color: #38383a;
-}
-
-/* Removendo a animação de destaque */
-@keyframes destaque {
-    0% { background-color: #e6f3ff; }
-    100% { background-color: transparent; }
-}
-
-.ios-checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-height: 150px;
-    overflow-y: auto;
-}
-
-.ios-checkbox {
-    display: flex;
-    align-items: center;
-}
-
-.ios-checkbox input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-.ios-checkbox label {
-    font-size: 14px;
-    color: #333;
 }
