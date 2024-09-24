@@ -30,7 +30,6 @@ function removerPessoa(index) {
     atualizarCheckboxesPessoas();
 }
 
-// Adicione esta função que estava faltando
 function atualizarListaPessoas() {
     const listaPessoas = document.getElementById('listaPessoas');
     listaPessoas.innerHTML = '';
@@ -121,13 +120,18 @@ function calcularDivisao() {
     const gorjeta = valorTotal * (porcentagemGorjeta / 100);
     const valorTotalComGorjeta = valorTotal + gorjeta;
 
-    // Inicialize o objeto divisaoIndividual
+    // Adicionando verificação para evitar divisão por zero
+    const totalPessoasEnvolvidas = itens.reduce((total, item) => total + item.pessoasEnvolvidas.length, 0);
+    if (totalPessoasEnvolvidas === 0) {
+        alert('Nenhuma pessoa está envolvida nos itens.');
+        return;
+    }
+
     const divisaoIndividual = {};
     pessoas.forEach(pessoa => {
         divisaoIndividual[pessoa] = 0;
     });
 
-    // Calcule a divisão individual
     itens.forEach(item => {
         const valorPorPessoa = item.valor / item.pessoasEnvolvidas.length;
         item.pessoasEnvolvidas.forEach(index => {
@@ -135,7 +139,6 @@ function calcularDivisao() {
         });
     });
 
-    // Calcule a gorjeta proporcional para cada pessoa
     const totalIndividual = Object.values(divisaoIndividual).reduce((a, b) => a + b, 0);
     for (const pessoa in divisaoIndividual) {
         const proporcao = divisaoIndividual[pessoa] / totalIndividual;
@@ -149,35 +152,11 @@ function calcularDivisao() {
     const resultado = document.getElementById('resultado');
     resultado.classList.remove('resultado-hidden');
 
-    // Adicionar divisão individual
     const resultadoIndividual = document.getElementById('resultadoIndividual');
     resultadoIndividual.innerHTML = '<h3>Divisão individual:</h3>';
     for (const [pessoa, valor] of Object.entries(divisaoIndividual)) {
         resultadoIndividual.innerHTML += `<div class="ios-result-item"><span>${pessoa}</span><span>R$ ${valor.toFixed(2)}</span></div>`;
     }
 
-    // Remover o elemento 'valorPorPessoa' que não é mais relevante
     document.getElementById('valorPorPessoa').parentElement.remove();
 }
-
-// Adiciona animação de destaque
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes destaque {
-        0% { background-color: #e6f3ff; }
-        100% { background-color: transparent; }
-    }
-`;
-document.head.appendChild(style);
-
-// Chame esta função quando a página carregar para inicializar o select
-document.addEventListener('DOMContentLoaded', function() {
-    const gorjetaSlider = document.getElementById('porcentagemGorjeta');
-    const gorjetaValor = document.getElementById('gorjetaValor');
-
-    gorjetaSlider.addEventListener('input', function() {
-        gorjetaValor.textContent = this.value + '%';
-    });
-
-    atualizarCheckboxesPessoas();
-});

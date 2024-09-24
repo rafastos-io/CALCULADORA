@@ -161,7 +161,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Adicionada transição para box-shadow */
 }
 
 .ios-button:hover {
@@ -245,34 +245,7 @@ body {
     }
 }
 
-@keyframes destaque {
-    0% { background-color: #e6f3ff; }
-    100% { background-color: transparent; }
-}
-
-.ios-checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-height: 150px;
-    overflow-y: auto;
-}
-
-.ios-checkbox {
-    display: flex;
-    align-items: center;
-}
-
-.ios-checkbox input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-.ios-checkbox label {
-    font-size: 14px;
-    color: #333;
-}
-
-/* Estilos para o modo noturno */
+/* Removendo estilos para o modo noturno */
 body.dark-mode {
     background-color: #1c1c1e;
     color: #fff;
@@ -342,4 +315,32 @@ body.dark-mode {
 
 .dark-mode .ios-result-individual {
     border-top-color: #38383a;
+}
+
+/* Removendo a animação de destaque */
+@keyframes destaque {
+    0% { background-color: #e6f3ff; }
+    100% { background-color: transparent; }
+}
+
+.ios-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.ios-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.ios-checkbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.ios-checkbox label {
+    font-size: 14px;
+    color: #333;
 }
